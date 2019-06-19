@@ -11,7 +11,7 @@ module ExpenseTracker
     end
 
     def post_expense(expense)
-      post '/expenses', JSON.generate(expense)
+      post '/expenses', JSON.generate(expense)   # why is this path plural? Aren't they posted one at a time?
       expect(last_response.status).to eq(200)
 
       parsed = JSON.parse(last_response.body)
@@ -21,7 +21,7 @@ module ExpenseTracker
 
     it 'records submitted expenses' do
       pending 'Need to persist expenses'
-      
+
       coffee = post_expense(
         'payee' => 'Starbucks',
         'amount' => 5.75,
