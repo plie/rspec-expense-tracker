@@ -26,8 +26,8 @@ module ExpenseTracker
         it 'returns the expense ID' do
           post '/expenses', JSON.generate(expense)
 
-          parced = JSON.parse(last_response.body)
-          expect(parced).to include('expense_id' => 417)
+          parsed = JSON.parse(last_response.body)
+          expect(parsed).to include('expense_id' => 417)
         end
 
         it 'responds with a 200 (OK)' do
@@ -47,8 +47,8 @@ module ExpenseTracker
         it 'returns and error message' do
           post '/expenses', JSON.generate(expense)
 
-          parced = JSON.parse(last_response.body)
-          expect(parced).to include('error' => 'Expense Incomplete')
+          parsed = JSON.parse(last_response.body)
+          expect(parsed).to include('error' => 'Expense Incomplete')
         end
 
         it 'responds with a 422 (Unprocessable Entity)' do

@@ -1,4 +1,4 @@
-require_relative '../../../app/v2_api'
+require_relative '../../../app/v3_api'
 require 'rack/test'
 
 module ExpenseTracker

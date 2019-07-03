@@ -1,9 +1,9 @@
 require 'rack/test'
 require 'json'
-require_relative '../../app/api.rb'
+require_relative '../../app/v3_api.rb' # change to applicable version
 
 module ExpenseTracker
-  RSpec.describe 'Expense Tracker API' do  
+  RSpec.describe 'Expense Tracker API', :db do  
     include Rack::Test::Methods
 
     def app
