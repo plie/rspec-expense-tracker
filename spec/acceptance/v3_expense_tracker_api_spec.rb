@@ -20,25 +20,25 @@ module ExpenseTracker
     end
 
     it 'records submitted expenses' do
-      pending 'Need to persist expenses'
+      # pending 'Need to persist expenses' # deleted here because v3 implements it
 
       coffee = post_expense(
         'payee' => 'Starbucks',
         'amount' => 5.75,
-        'date' => '2019-06-17'
+        'date' => '2017-06-10'
       )
       zoo = post_expense(
         'payee' => 'Zoo',
         'amount' => 15.25,
-        'date' => '2019-06-17'
+        'date' => '2017-06-10'
       )
       groceries = post_expense(
         'payee' => 'Whole Foods',
         'amount' => 95.20,
-        'date' => '2019-06-18'
+        'date' => '2017-06-11'
       )
 
-      get '/expenses/2019-06-17'
+      get '/expenses/2017-06-10'
       expect(last_response.status).to eq(200)
 
       expenses = JSON.parse(last_response.body)
